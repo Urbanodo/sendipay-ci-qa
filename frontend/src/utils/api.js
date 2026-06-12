@@ -1,17 +1,17 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'https://sendipay-api.onrender.com/api'
+  baseURL: import.meta.env.VITE_API_URL
+    ? `${import.meta.env.VITE_API_URL}/api`
+    : '/api'
 })
 
-// Attacher le token JWT à chaque requête
 api.interceptors.request.use(config => {
   const token = localStorage.getItem('token')
   if (token) config.headers.Authorization = `Bearer ${token}`
   return config
 })
 
-// Rediriger vers /login si token expiré
 api.interceptors.response.use(
   res => res,
   err => {
