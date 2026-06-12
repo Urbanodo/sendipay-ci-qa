@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: '/api'
+  baseURL: 'https://sendipay-api.onrender.com/api'
 })
 
 // Attacher le token JWT à chaque requête
