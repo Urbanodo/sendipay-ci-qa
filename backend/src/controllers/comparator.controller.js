@@ -49,7 +49,7 @@ const getComparison = async (req, res) => {
       bestProvider: results[0],
       updatedAt: new Date().toISOString()
     });
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'Erreur lors de la comparaison.' });
   }
 };

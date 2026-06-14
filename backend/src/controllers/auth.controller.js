@@ -24,7 +24,7 @@ const register = async (req, res) => {
     });
 
     res.status(201).json({ token: generateToken(user._id), user });
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'Erreur serveur lors de l\'inscription.' });
   }
 };
@@ -41,7 +41,7 @@ const login = async (req, res) => {
       return res.status(401).json({ error: 'Email ou mot de passe incorrect.' });
     }
     res.json({ token: generateToken(user._id), user });
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'Erreur serveur lors de la connexion.' });
   }
 };

@@ -20,7 +20,7 @@ const createTransfer = async (req, res) => {
       amount, currency, provider, fees, exchangeRate, amountReceived, note
     });
     res.status(201).json({ transfer });
-  } catch (err) {
+  } catch {
     res.status(500).json({ error: 'Erreur lors de la création du transfert.' });
   }
 };
