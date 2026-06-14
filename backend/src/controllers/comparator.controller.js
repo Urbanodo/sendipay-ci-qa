@@ -1,3 +1,4 @@
+// Fonctionnalité : comparateur multi-opérateurs avec taux de change en temps réel
 const axios = require('axios');
 
 // Frais réels approximatifs par opérateur (source : remittanceprices.worldbank.org)
